@@ -1,228 +1,257 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stinica to Rab Ferry Timetable 2025</title>
-  <style>
-    /* Background Pattern */
-    body {
-      background-color: #0a0a0a; /* Almost black background */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='%23141414'/%3E%3Cpath d='M20 10L30 20L20 30L10 20Z' fill='%23141414'/%3E%3Cpath d='M20 20L40 40L20 60L0 40Z' fill='%23141414'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: #e0e0e0;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      color: #ffffff;
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
-
-    table {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      background-color: rgba(20, 20, 20, 0.9); /* Semi-transparent dark background */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    th, td {
-      padding: 15px;
-      text-align: center;
-      border: 1px solid #333;
-    }
-
-    th {
-      background-color: #2c3e50;
-      color: #ffffff;
-      font-size: 1.2rem;
-    }
-
-    td {
-      font-size: 1.1rem;
-      color: #e0e0e0;
-    }
-
-    .camera-links {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .camera-links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .camera-links a:hover {
-      background-color: #2980b9;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
-      border: none;
-      margin: 20px auto;
-      display: block;
-      background-color: #1e1e1e;
-    }
-
-    img {
-      width: 100%;
-      max-width: 800px;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-    }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 18.0px 'Helvetica Neue'; color: #000000; color: rgba(0, 0, 0, 0.54); -webkit-text-stroke: rgba(0, 0, 0, 0.54)}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 18.0px 'Helvetica Neue'; color: #000000; color: rgba(0, 0, 0, 0.54); -webkit-text-stroke: rgba(0, 0, 0, 0.54); min-height: 22.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-  <h1>Stinica to Rab Ferry Timetable 2025</h1>
-
-  <!-- Next Departures Table -->
-  <h2>Next Departures</h2>
-  <table id="nextDepartures">
-    <thead>
-      <tr>
-        <th>From Stinica</th>
-        <th>From Misnjak Rab</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- JavaScript will populate this -->
-    </tbody>
-  </table>
-
-  <!-- Live Camera Links -->
-  <h2>Live Cameras</h2>
-  <div class="camera-links">
-    <a href="https://m.hak.hr/kamera.asp?g=5&k=135" target="_blank">Stinica Live Camera</a>
-    <a href="https://m.hak.hr/kamera.asp?g=5&k=19" target="_blank">Rab - Misnjak Live Camera</a>
-  </div>
-
-  <!-- Wind Map (Image) -->
-  <h2>Wind Map for Next Departure</h2>
-  <img src="https://prognoza.hr/aladinHR/web_uv10_SENJ_04.png" alt="Wind Map">
-
-  <!-- Windy.com Embed -->
-  <h2>Windy.com Wind Map</h2>
-  <iframe
-    width="100%"
-    height="450"
-    src="https://embed.windy.com/embed2.html?lat=44.750&lon=14.750&zoom=9&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=44.750&detailLon=14.750&metricWind=default&metricTemp=default&radarRange=-1"
-    frameborder="0"
-    style="border: none;"
-  ></iframe>
-
-  <script>
-    // Ferry timetable data for all months
-    const timetable = {
-  misnjak: {
-    january: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],
-    february: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],
-    march: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],
-    april: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "20:30", "21:30", "23:30"],
-    may: ["5:00", "5:45", "6:45", "7:45", "8:45", "10:30", "11:30", "12:30", "13:30", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:30", "23:30"],
-    june: ["5:00", "5:45", "6:45", "7:45", "8:45", "10:30", "11:30", "12:30", "13:30", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:30", "23:30"],
-    july: ["4:00", "5:00", "5:45", "6:30", "7:30", "8:30", "9:30", "10:00", "10:30", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "18:30", "19:30", "20:30", "21:30", "22:30", "23:30"],
-    august: ["4:00", "5:00", "5:45", "6:30", "7:30", "8:30", "9:30", "10:00", "10:30", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "18:30", "19:30", "20:30", "21:30", "22:30", "23:30"],
-    september: ["5:00", "5:45", "6:45", "7:45", "8:45", "10:30", "11:30", "12:30", "13:30", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:30", "23:30"],
-    october: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],
-    november: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],
-    december: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"]
-  },
-  stinica: {
-    january: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],
-    february: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],
-    march: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],
-    april: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:00", "21:00", "22:00", "24:00"],
-    may: ["5:30", "6:15", "7:15", "8:15", "9:15", "11:00", "12:00", "13:00", "14:00", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "22:00", "24:00"],
-    june: ["5:30", "6:15", "7:15", "8:15", "9:15", "11:00", "12:00", "13:00", "14:00", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "22:00", "24:00"],
-    july: ["4:30", "5:30", "6:15", "7:00", "8:00", "9:00", "10:00", "10:30", "11:00", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"],
-    august: ["4:30", "5:30", "6:15", "7:00", "8:00", "9:00", "10:00", "10:30", "11:00", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"],
-    september: ["5:30", "6:15", "7:15", "8:15", "9:15", "11:00", "12:00", "13:00", "14:00", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "22:00", "24:00"],
-    october: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],
-    november: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],
-    december: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"]
-  }
-};
-
-    // Function to get the current month
-    function getCurrentMonth() {
-      const months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-      const now = new Date();
-      return months[now.getMonth()];
-    }
-
-    // Function to convert time string to Date object
-    function getTimeObject(timeString) {
-      const [hours, minutes] = timeString.split(":");
-      const date = new Date();
-      date.setHours(parseInt(hours), parseInt(minutes), 0, 0);
-      return date;
-    }
-
-    // Function to get the next three departures
-    function getNextDepartures(departures, currentTime) {
-      return departures
-        .map(time => getTimeObject(time))
-        .filter(time => time > currentTime)
-        .slice(0, 3); // Get the next three departures
-    }
-
-    // Function to format time as HH:MM
-    function formatTime(date) {
-      return date.toTimeString().slice(0, 5);
-    }
-
-    // Function to update the table
-    function updateTable() {
-      const now = new Date();
-      const currentMonth = getCurrentMonth();
-      const nextStinica = getNextDepartures(timetable.stinica[currentMonth], now);
-      const nextMisnjak = getNextDepartures(timetable.misnjak[currentMonth], now);
-
-      const tableBody = document.querySelector("#nextDepartures tbody");
-      tableBody.innerHTML = ""; // Clear existing rows
-
-      // Add rows for the next departures
-      for (let i = 0; i < 3; i++) {
-        const row = document.createElement("tr");
-        const stinicaCell = document.createElement("td");
-        const misnjakCell = document.createElement("td");
-
-        stinicaCell.textContent = nextStinica[i] ? formatTime(nextStinica[i]) : "No more departures today";
-        misnjakCell.textContent = nextMisnjak[i] ? formatTime(nextMisnjak[i]) : "No more departures today";
-
-        row.appendChild(stinicaCell);
-        row.appendChild(misnjakCell);
-        tableBody.appendChild(row);
-      }
-    }
-
-    // Update the table every minute
-    setInterval(updateTable, 60000);
-    updateTable(); // Initial update
-  </script>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Stinica to Rab Ferry Timetable 2025&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Background Pattern */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #0a0a0a; /* Almost black background */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='%23141414'/%3E%3Cpath d='M20 10L30 20L20 30L10 20Z' fill='%23141414'/%3E%3Cpath d='M20 20L40 40L20 60L0 40Z' fill='%23141414'/%3E%3C/svg%3E");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-repeat: repeat;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #e0e0e0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h1 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 2.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h2 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 1.8rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 30px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>table {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-width: 800px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0 auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-collapse: collapse;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: rgba(20, 20, 20, 0.9); /* Semi-transparent dark background */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>th, td {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid #333;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>th {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #2c3e50;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 1.2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>td {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 1.1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #e0e0e0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.camera-links {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 40px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.camera-links a {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 10px 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #3498db;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-decoration: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 1.1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transition: background-color 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.camera-links a:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #2980b9;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>iframe {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-width: 800px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>height: 450px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 20px auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #1e1e1e;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>img {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-width: 800px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>height: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 20px auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Stinica to Rab Ferry Timetable 2025&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Next Departures Table --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Next Departures&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;table id="nextDepartures"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;th&gt;From Stinica&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;th&gt;From Misnjak Rab&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- JavaScript will populate this --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/table&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Live Camera Links --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Live Cameras&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="camera-links"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a href="https://m.hak.hr/kamera.asp?g=5&amp;k=135" target="_blank"&gt;Stinica Live Camera&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a href="https://m.hak.hr/kamera.asp?g=5&amp;k=19" target="_blank"&gt;Rab - Misnjak Live Camera&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Wind Map (Image) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Wind Map for Next Departure&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;img id="windMap" src="" alt="Wind Map"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Windy.com Embed --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Windy.com Wind Map&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;iframe</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width="100%"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>height="450"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>src="https://embed.windy.com/embed2.html?lat=44.750&amp;lon=14.750&amp;zoom=9&amp;level=surface&amp;overlay=wind&amp;menu=&amp;message=&amp;marker=&amp;calendar=&amp;pressure=&amp;type=map&amp;location=coordinates&amp;detail=&amp;detailLat=44.750&amp;detailLon=14.750&amp;metricWind=default&amp;metricTemp=default&amp;radarRange=-1"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>frameborder="0"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>style="border: none;"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&gt;&lt;/iframe&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Ferry timetable data for all months</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const timetable = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>misnjak: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>january: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>february: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>march: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>april: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "20:30", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>may: ["5:00", "5:45", "6:45", "7:45", "8:45", "10:30", "11:30", "12:30", "13:30", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>june: ["5:00", "5:45", "6:45", "7:45", "8:45", "10:30", "11:30", "12:30", "13:30", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>july: ["4:00", "5:00", "5:45", "6:30", "7:30", "8:30", "9:30", "10:00", "10:30", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "18:30", "19:30", "20:30", "21:30", "22:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>august: ["4:00", "5:00", "5:45", "6:30", "7:30", "8:30", "9:30", "10:00", "10:30", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "18:30", "19:30", "20:30", "21:30", "22:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>september: ["5:00", "5:45", "6:45", "7:45", "8:45", "10:30", "11:30", "12:30", "13:30", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>october: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>november: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>december: ["5:45", "6:45", "7:45", "8:45", "11:00", "12:00", "13:00", "15:00", "16:00", "17:30", "19:30", "21:30", "23:30"]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>stinica: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>january: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>february: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>march: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>april: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:00", "21:00", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>may: ["5:30", "6:15", "7:15", "8:15", "9:15", "11:00", "12:00", "13:00", "14:00", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>june: ["5:30", "6:15", "7:15", "8:15", "9:15", "11:00", "12:00", "13:00", "14:00", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>july: ["4:30", "5:30", "6:15", "7:00", "8:00", "9:00", "10:00", "10:30", "11:00", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>august: ["4:30", "5:30", "6:15", "7:00", "8:00", "9:00", "10:00", "10:30", "11:00", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>september: ["5:30", "6:15", "7:15", "8:15", "9:15", "11:00", "12:00", "13:00", "14:00", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>october: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>november: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>december: ["6:15", "7:15", "8:15", "9:15", "10:30", "12:30", "14:00", "15:30", "16:30", "18:30", "20:30", "22:00", "24:00"]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Function to get the current month</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function getCurrentMonth() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const now = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return months[now.getMonth()];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Function to convert time string to Date object</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function getTimeObject(timeString) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const [hours, minutes] = timeString.split(":");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const date = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>date.setHours(parseInt(hours), parseInt(minutes), 0, 0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return date;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Function to get the next three departures</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function getNextDepartures(departures, currentTime) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return departures</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.map(time =&gt; getTimeObject(time))</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.filter(time =&gt; time &gt; currentTime)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.slice(0, 3); // Get the next three departures</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Function to format time as HH:MM</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function formatTime(date) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return date.toTimeString().slice(0, 5);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Function to update the table</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function updateTable() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const now = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const currentMonth = getCurrentMonth();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const nextStinica = getNextDepartures(timetable.stinica[currentMonth], now);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const nextMisnjak = getNextDepartures(timetable.misnjak[currentMonth], now);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const tableBody = document.querySelector("#nextDepartures tbody");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>tableBody.innerHTML = ""; // Clear existing rows</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Add rows for the next departures</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for (let i = 0; i &lt; 3; i++) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const row = document.createElement("tr");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const stinicaCell = document.createElement("td");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const misnjakCell = document.createElement("td");</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>stinicaCell.textContent = nextStinica[i] ? formatTime(nextStinica[i]) : "No more departures today";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>misnjakCell.textContent = nextMisnjak[i] ? formatTime(nextMisnjak[i]) : "No more departures today";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>row.appendChild(stinicaCell);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>row.appendChild(misnjakCell);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tableBody.appendChild(row);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Function to generate the wind map URL</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function generateWindMapUrl() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const now = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const hour = now.getHours();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const adjustedHour = (hour - 7 + 24) % 24; // Subtract 7 hours and handle negative values</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const formattedHour = String(adjustedHour).padStart(2, '0');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return `https://prognoza.hr/aladinHR/web_uv10_SENJ_${formattedHour}.png`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Set the wind map image source dynamically</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('windMap').src = generateWindMapUrl();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Update the table every minute</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>setInterval(updateTable, 60000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>updateTable(); // Initial update</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
